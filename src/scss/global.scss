@@ -1,0 +1,1256 @@
+@charset "UTF-8";
+
+* {
+    &:focus, &:active {
+        outline: none !important;
+    }
+}
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Baloo|Lobster|Calistoga|Montserrat:400,400i,700,700i');
+
+// Bootstrap
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+// Default Variables
+@import 'variables';
+@import 'mixins';
+@import 'colors';
+
+// Import Slick Carousel base styles and updates
+@import '../../node_modules/slick-carousel/slick/slick.css';
+@import 'slick-theme';
+
+// Hamburgers
+@import url('../../node_modules/hamburgers/dist/hamburgers.css');
+
+#hamburger {
+    position: absolute;
+    top: 0;
+    right: 5%;
+    z-index: 99999;
+    border: none;
+    @include padding(10px,10px,10px,10px);
+
+    @media screen and (max-width: $break-small) {
+        right: 1%;
+    }
+}
+
+.hamburger-inner {
+    background: $darkGrayColor !important;
+    height: 5px !important;
+
+    &::before, &::after {
+        height: 5px !important;
+        background: $darkGrayColor !important;
+    }
+}
+
+// Main Site Styles
+body {
+    font-family: $HDsans;
+    background: $whiteColor;
+    color: $textColor;
+    font-weight: normal;
+    @include selection-color($whiteColor,$redColor);
+    
+    h1, h2, h3, h4, h5 {
+        font-family: $HDserif;
+        color: $redColor;
+
+        @media screen and (max-width: $break-small) {
+            text-align: center;
+        }
+    }
+
+    h1 {
+        font-weight: normal;
+        @include font-size(32);
+        @include line-height(34);
+        @include margin(10px,0px,0px,0px);
+        @include padding(12px,0px,0px,0px);
+
+        @media screen and (max-width: $break-large) {
+            @include font-size(31);
+            @include line-height(32);
+        }
+        @media screen and (max-width: $break-medium) {
+            @include font-size(25);
+            @include line-height(26);
+        }
+        @media screen and (max-width: $break-small) {
+            @include font-size(23);
+            @include line-height(24);
+        }
+    }
+
+    h2 {
+        font-weight: bold;
+        @include font-size(20);
+        @include line-height(22);
+        @include margin(0px,auto,0px,auto);
+        @include padding(12px,0px,12px,0px);
+    }
+	
+    h3, h4, h5 {
+        font-weight: bold;
+        @include margin(0px,0px,0px,0px);
+        @include padding(0px,0px,0px,0px);
+    }
+
+    h3 {
+        @include font-size(14);
+        @include line-height(16);
+        margin-top: 25px;
+
+        @media screen and (max-width: $break-medium) {
+            margin-top: 20px;
+        }
+
+        @media screen and (max-width: $break-small) {
+            margin-top: 15px;
+        }
+
+        @media screen and (max-width: $break-xsmall) {
+            margin-top: 10px;
+        }
+    }
+
+    h4 {
+        @include font-size(13);
+        @include line-height(14);
+    }
+
+    h5 {
+        @include font-size(12);
+        @include line-height(13);
+    }
+
+    ol, ul {
+        @include font-size(9.25);
+        @include line-height(13);
+        display: block;
+        list-style: outside disc;
+        @include margin(20px,0,10px,0);
+        @include padding(0,15px,0,25px);
+
+        li {
+            @include padding(0,0,20px,0);
+        }
+    }
+
+    ol {
+        list-style: outside decimal;
+    }
+
+    p {
+        font-weight: normal;
+        @include font-size(9.5);
+        @include line-height(13);
+        @include margin(0,0,1rem,0);
+        @include padding(0,0,0,0);
+
+        &.notification {
+            @include font-size(8);
+            @include line-height(9);
+            @include padding(8px,0,8px,0);
+        }
+        
+        &.text-danger {
+            color: $redColor;
+            font-style: oblique;
+            text-align: center;
+        }
+
+        @media screen and (max-width: $break-small) {
+            text-align: center;
+        }
+    }
+
+    a {
+        color: $linkColor;
+        text-decoration: none;
+        font-weight: bold;
+        @include transition(0s,0.25s,all,ease-in-out);
+        
+        &:hover {
+            color: $greenColor;
+            text-decoration: none;
+        }
+    }
+
+    img {
+        width: $full-width;
+        display: block;
+    }
+
+    hr {
+        border: $no-border;
+        border-top: $solid-border;
+    }
+
+    blockquote {
+        background: $lightGrayColor;
+        border-left: 3px solid $greenColor;
+        @include margin(0,1rem,1rem,1rem);
+        @include padding(20px,35px,20px,35px);
+        @include border-radius(8px,8px,8px,8px);
+
+        strong {
+            color: $greenColor;
+            font-size: 95%;
+        }
+
+        h5 {
+            @include margin(0,auto,10px,auto);
+        }
+
+        p {
+            @include margin(0,auto,0,auto);
+            @include padding(0,0,0,0);
+        }
+    }
+
+    code {
+        font-size: 100%;
+        color: $lightRedColor;
+    }
+
+    sup { 
+        font-size: 65%;
+        line-height: 0.7rem;
+    }
+
+    .float-left { float: left; }
+    .float-right { float: right; }
+    .float-none { float: none; }
+
+    .center-flex {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .justify-center {
+        justify-content: center;
+    }
+
+    .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
+        float: left;
+        @include margin(0,auto,0,auto);
+        flex-wrap: wrap;
+    }
+
+    .container {
+        @media screen and (max-width: $break-xsmall) {
+            overflow: hidden;
+        }
+    }
+
+    #react-confirm-alert {
+        .react-confirm-alert-overlay {
+            background: rgba(0, 0, 0, 0.65);
+
+            .react-confirm-alert-body {
+                @include border-radius(15px,15px,15px,15px);
+                @include box-shadow(0 10px 55px rgba(0, 0, 0, 0.95));
+            }
+        }
+    }
+
+    nav {
+
+        &#header {
+            background: rgba(255,255,255,0.85);
+            @include box-shadow(unquote('0 1px 14px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset'));
+
+            &:before {
+                top: 50%;
+                bottom: 0;
+                left: 10px;
+                right: 10px;
+                @include box-shadow(0 0 5px rgba(0,0,0,0.6));
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                z-index: -2;
+                @include box-shadow(0 0 5px rgba(0,0,0,0.6));
+            }
+
+            .container {
+                position: relative;
+            }
+
+            .navContainer {
+                @include margin(0,auto,0,auto);
+                display: contents;
+                align-items: center;
+
+                @media screen and (max-width: $break-small) {
+                    display: contents;
+                }
+            }
+
+            .navbar-brand svg {
+                width: 250px;
+            }
+    
+            .navbar-nav {
+                align-items: center;
+                flex-direction: row;
+
+                .nav-item {
+                    @include padding(0,15px,0,15px);
+
+                    &:first-child {
+                        padding-left: 5px;
+
+                        @media screen and (max-width: $break-medium) {
+                            padding-left: 15px;
+                        }
+                    }
+
+                    .nav-link {
+                        @include font-size(10);
+                        @include line-height(10);
+
+                        @media screen and (max-width: $break-large) {
+                            @include font-size(8);
+                            @include line-height(8);
+                        }
+
+                        @media screen and (max-width: $break-medium) {
+                            @include font-size(12);
+                            @include line-height(12);
+                        }
+                    }
+
+                    @media screen and (max-width: $break-medium) {
+                        @include padding(5px,15px,5px,15px);
+                    }
+                }
+
+                @media screen and (max-width: $break-medium) {
+                    flex-direction: column;
+                }
+
+                @media screen and (max-width: $break-small) {
+                    display: contents;
+                    flex-direction: column;
+                    text-align: center;
+                }
+            }
+        }
+        
+        &.navbar {
+            border: $no-border;
+
+            ol li, ul li {
+                @include padding(0,0,0,0);
+            }
+
+            .dropdown-header {
+                @include padding(3px,20px,3px,20px);
+            }
+
+            .dropdown-menu > li > a:hover {
+                background: $lightGreenColor;
+            }
+
+            .dropdown-menu > .active > a {
+                background: $greenColor;
+
+                &:hover {
+                    color: $textColor;
+                }
+            }
+
+            .navbar-nav > li > a {
+                color: $textColor;
+                padding-top: 25px;
+                padding-bottom: 25px;
+
+                &:hover {
+                    color: $redColor;
+                }
+            }
+        }
+
+        &.navbar-default {
+            border-color: none;
+
+            .navbar-toggle {
+                @include margin(15px,15px,15px,15px);
+                border-color: $greenColor;
+
+                .icon-bar {
+                    background-color: $greenColor;
+                }
+
+                &:hover {
+                    background-color: $lightGreenColor;
+                }
+            }
+            .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+                background: $greenColor;
+                color: $whiteColor;
+            }
+
+            .navbar-nav > .open > a, .navbar-nav > .open > a:focus, .navbar-nav > .open > a:hover {
+                background: $lightGreenColor;
+                color: $darkGrayColor;
+            }
+
+            @media screen and (min-width: $break-medium) {
+                background: rgba(255,255,255,0.8);
+            }
+            
+            @media screen and (min-width: $break-xsmall) and (max-width: $break-small) {
+                background: rgba(255,255,255,0.9);
+            }
+        }
+
+        &.mini {
+
+            .navbar-brand {
+                @include padding(10px,15px,5px,15px);
+
+                & > img {
+                    width: 120px;
+                }
+            }
+    
+            .navbar-nav > li > a {
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+
+            .navbar-toggle {
+                @include margin(5px,15px,5px,15px);
+            }
+        }
+
+    }
+    
+    .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+        max-height: 380px;
+    }
+
+    .wrapper {
+        display: block;
+        width: $full-width;
+        @include margin(0,auto,0,auto);
+        @include padding(0,0,0,0);
+        overflow: hidden;
+    }
+
+    .application {
+        display: block;
+        width: $full-width;
+        @include margin(0,auto,0,auto);
+        @include padding(0,0,0,0);
+    }
+
+    #banner {
+        @include padding(0,0,0,0);
+        height: 75vh;
+        min-height: 275px;
+        display: flex;
+        align-items: center;
+
+        h1 {
+            width: 45%;
+            display: block;
+            background: rgba(90,20,0,0.4);
+            color: $whiteColor;
+            text-shadow: 1px 2px 8px rgba(0,0,0,0.4);
+            @include margin(0,auto,0,auto);
+            @include padding(20px,20px,20px,20px);
+            @include border-radius(10px,10px,10px,10px);
+
+            @media screen and (max-width: $break-small) {
+                width: 85%;
+            }
+        }
+
+        p {
+            font-style: oblique;
+        }
+
+        &.homepage {
+            background: $blueColor;
+            background-size: cover;
+            height: 100vh;
+
+            h1 {
+                width: 75%;
+
+                @media screen and (max-width: $break-large) {
+                    width: 85%;
+                }
+            }
+        }
+
+        &.article {
+            h1, p {
+                background: none;
+                text-align: left !important;
+                width: 75%;
+                @include margin(0,0,0,0);
+                @include padding(0,0,0,0);
+
+                @media screen and (max-width: $break-large) {
+                    width: 85%;
+                }
+            }
+
+            h1 {
+                padding-top: 55px;
+            }
+        }
+
+        &.login {
+            background: $greenColor;
+            background-size: cover;
+            height: 400px;
+        }
+
+        @media screen and (min-width: $break-xsmall) {
+            height: 55vh;
+
+            h1 {
+                width: 100%;
+            }
+        }
+
+        @media screen and (min-width: $break-medium) {
+            height: 45vh;
+
+            h1 {
+                width: 65%;
+            }
+        }
+
+        @media screen and (min-width: $break-large) {
+            height: 75vh;
+
+            h1 {
+                width: 50%;
+            }
+        }
+    }
+
+    #content {
+        @include padding(30px,0,30px,0);
+
+        .icon {
+            display: flex;
+            flex: 1 0 100%;
+            max-width: 160px;
+            @include margin(0,auto,0,auto);
+            @include padding(0,0,0,0);
+        }
+
+        .portfolioFull {
+            width: $full-width;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            @include margin(0,auto,0,auto);
+            @include padding(0,0,0,0);
+
+            .panel {
+                height: 68vh;
+                @include box-shadow(none);
+
+                h4 {
+                    margin-top: 20px;
+                }
+
+                img {
+                    width: $full-width;
+                    @include box-shadow(unquote('0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset'));
+
+                    &:before {
+                        top: 10px;
+                        bottom: 10px;
+                        left: 0;
+                        right: 50%;
+                        @include box-shadow(unquote('0 0 15px rgba(0,0,0,0.6)'));
+                        @include border-radius(10px / 100px,10px / 100px,10px / 100px,10px / 100px);
+                    }
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        z-index: -2;
+                    }
+                }
+
+                @media screen and (max-width: $break-xlarge) {
+                    height: 75vh;
+                }
+
+                @media screen and (max-width: $break-large) {
+                    height: 68vh;
+                }
+
+                @media screen and (max-width: $break-small) {
+                    height: auto;
+                }
+            }
+        }
+
+        #auth, #contact {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            @include margin(0,auto,20px,auto);
+            @include padding(0,1.25rem,0,1.25rem);
+
+            h2, p {
+                width: 100%;
+            }
+
+            fieldset {
+                border: medium none !important;
+                min-width: 100%;
+                width: 100%;
+                @include margin(0,0,10px,0);
+                @include padding(0,0,0,0);
+            }
+
+            input[type=text], input[type=password], input[type=email], input[type=tel], input[type=url], textarea, button[type=submit] {
+                width: 100%;
+                height: calc(1.5em + 0.75rem + 2px);
+                border: $solid-light-border;
+                background: $whiteColor;
+                @include margin(0,0,5px,0);
+                @include padding(10px,10px,10px,40px);
+                @include border-radius(8px,8px,8px,8px);
+
+                &.center {
+                    @include margin(0,auto,5px,auto);
+                }
+
+                &:focus {
+                    outline: 0;
+                    @include box-shadow(0 0 0 0.2rem rgba(0, 123, 255, 0.25))
+                }
+
+                &::-webkit-input-placeholder {
+                    color: $grayColor;
+                }
+                &:-moz-placeholder {
+                    color: $grayColor;
+                }
+                &::-moz-placeholder {
+                    color: $grayColor;
+                }
+                &:-ms-input-placeholder {
+                    color: $grayColor;
+                }
+            }
+
+            button[type="submit"] {
+                max-width: 200px;
+                height: auto;
+            }
+
+            textarea {
+                height: 200px;
+                max-width: 100%;
+                resize: both;
+                @include padding(10px,10px,10px,10px);
+            }
+
+            button[type="submit"] {
+                cursor: pointer;
+                width: 100%;
+                border: none;
+                background: $greenColor;
+                color: $whiteColor;
+                @include margin(0,0,5px,0);
+                @include padding(10px,10px,10px,10px);
+                @include transition(0s,0.25s,all,ease-in-out);
+
+                &:hover {
+                    background: $redColor;
+                }
+            }
+
+            .formIcon {
+                position: absolute;
+                color: $lightBlueColor;
+                @include font-size(25);
+                @include margin(0,0,0,0);
+                @include padding(8px,8px,8px,8px);
+            }
+        }
+
+        .footer-top {
+            display: flex;
+            align-items: baseline;
+            @include margin(0,auto,0,auto);
+            @include padding(0,0,0,0);
+
+            p {
+                @include margin(10px,auto,0,auto);
+                @include font-size(8.5);
+                @include line-height(10);
+            }
+            
+            .fa {
+                @include font-size(30);
+                @include margin(0,auto,0,auto);
+            }
+        }
+
+        &.skills {
+            background: $lightGreenColor;
+
+            h3 {
+                color: $blueColor;
+                @include font-size(28);
+                @include margin(10px,auto,10px,auto);
+            }
+
+            h4 {
+                @include font-size(11);
+
+                @media screen and (max-width: $break-large) {
+                    @include font-size(11);
+                    @include line-height(11);
+                }
+                @media screen and (max-width: $break-medium) {
+                    @include font-size(9);
+                    @include line-height(9);
+                }
+                @media screen and (max-width: $break-small) {
+                    @include font-size(8);
+                    @include line-height(8);
+                }
+            }
+
+            .skillIcon {
+                height: 10vh;
+                float: left;
+                @include margin(30px,auto,30px,auto);
+            }
+        }
+
+        @media screen and (min-width: $break-xsmall) {
+            @include padding(20px,0,20px,0);
+        }
+
+        @media screen and (min-width: $break-medium) {
+            @include padding(25px,0,25px,0);
+        }
+
+        @media screen and (min-width: $break-large) {
+            @include padding(30px,0,30px,0);
+        }
+    }
+
+    .btn-primary, .btn-secondary, .btn-reverse, .react-confirm-alert-button-group > button {
+        position: relative;
+        display: inline-block;
+        color: $whiteColor;
+        background-color: $linkColor;
+        border: 1px solid $blueColor;
+        @include margin(0,0,20px,0);
+        @include box-shadow(unquote('0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset'));
+        @include transition(0,0.25s,all,ease-in-out);
+
+        a {
+            color: $whiteColor;
+
+            &:hover {
+                color: $redColor;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            width: $full-width;
+            height: $full-width;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            @include box-shadow(unquote('0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset'));
+            @include border-radius(10px,10px,10px,10px);
+            @include transition(0s,0.25s,all,ease-in-out);
+        }
+
+        &:hover {
+            color: $redColor;
+            background: $whiteColor;
+            border: 1px solid transparent;
+
+            &::after {
+                @include box-shadow(unquote('0 0 50px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 0, 0, 0.8) inset'));
+                transform: scale(1.6);
+                opacity: 0;
+            }
+        }
+
+        &:active, &:focus {
+            background: $whiteColor !important;
+            color: $redColor !important;
+            border: 1px solid $redColor;
+            outline: none !important;
+            @include box-shadow(unquote('0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset !important'));
+        }
+
+        &.fullBtn {
+            width: $full-width;
+        }
+    }
+
+    .btn-secondary {
+        background-color: $redColor;
+
+        a {
+            color: $whiteColor;
+
+            &:hover {
+                color: $lightGrayColor;
+            }
+        }
+
+        &:hover {
+            color: $lightGrayColor;
+            background: $lightRedColor;
+            border: 1px solid $redColor;
+        }
+
+        &:active, &:focus {
+            background: $lightRedColor !important;
+            color: $lightGrayColor !important;
+            border: 1px solid $redColor;
+            outline: none !important;
+            @include box-shadow(unquote('0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset !important'));
+        }
+    }
+
+    .btn-reverse {
+        background-color: $lightGrayColor;
+        border-color: $darkGrayColor;
+        color: $darkGrayColor;
+
+        a {
+            color: $darkGrayColor;
+
+            &:hover {
+                color: $lightGrayColor;
+            }
+        }
+
+        &:hover {
+            color: $lightGrayColor;
+            background: $blueColor;
+            border: 1px solid $blueColor;
+        }
+
+        &:active, &:focus {
+            background: $blueColor !important;
+            color: $lightGrayColor !important;
+            border: 1px solid $redColor;
+            outline: none !important;
+            @include box-shadow(unquote('0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset !important'));
+        }
+    }
+
+    .react-confirm-alert-button-group {
+        @extend .center-flex;
+        justify-content: flex-end;
+        
+        &> button {
+            @include margin(0,0,0,15px);
+        }
+    }
+
+    #mapOverlay {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 425px;
+        z-index: 99;
+
+        .mapContent {
+            background: rgba(255,255,255,0.6);
+            width: 60%;
+            text-align: center;
+            @include margin(0,auto,0,auto);
+            @include padding(45px,8px,45px,8px);
+            @include border-radius(20px,20px,20px,20px);
+
+            h1, h3 {
+                @include margin(0,0,0,0);
+                @include padding(0,0,0,0);
+            }
+
+            h1 {
+                color: $redColor;
+                text-shadow: 0px 1px 3px $darkGrayColor;
+                @include font-size(35);
+                @include line-height(32);
+                @include margin(3%,0,0,0);
+
+                @media screen and (max-width: $break-large) {
+                    @include font-size(26);
+                    @include line-height(26);
+                }
+                @media screen and (max-width: $break-medium) {
+                    @include font-size(22);
+                    @include line-height(22);
+                }
+                @media screen and (max-width: $break-small) {
+                    @include font-size(20);
+                    @include line-height(20);
+                }
+            }
+
+            h3 {
+                font-family: $HDsans;
+                @include font-size(16);
+                font-weight: bold;
+                color: $darkGrayColor;
+                @include margin(3%,0,3%,0);
+
+                @media screen and (max-width: $break-large) {
+                    @include font-size(14);
+                    @include line-height(14);
+                }
+                @media screen and (max-width: $break-medium) {
+                    @include font-size(12);
+                    @include line-height(12);
+                }
+                @media screen and (max-width: $break-small) {
+                    @include font-size(10);
+                    @include line-height(10);
+                }
+            }
+
+            @media screen and (max-width: $break-large) {
+                width: 50%;
+                @include padding(25px,8px,25px,8px);
+            }
+            @media screen and (max-width: $break-medium) {
+                width: 60%;
+                @include padding(25px,8px,10px,8px);
+            }
+            @media screen and (max-width: $break-small) {
+                @include padding(25px,8px,25px,8px);
+            }
+            @media screen and (max-width: $break-xsmall) {
+                @include padding(25px,8px,25px,8px);
+            }
+        }
+
+        @media screen and (max-width: $break-large) {
+            height: 350px;
+        }
+        @media screen and (max-width: $break-medium) {
+            height: 325px;
+        }
+        @media screen and (max-width: $break-small) {
+            height: 300px;
+        }
+    }
+
+    .col-md-5 #mapOverlay {
+        @include padding(0,25px,0,0);
+    }
+
+    #map {
+        width: 100%;
+        height: 425px;
+        overflow: hidden;
+        @include margin(0,auto,0,auto);
+
+        &.inset {
+            @include margin(0,auto,20px,auto);
+        }
+
+        a[href^="http://maps.google.com/maps"]{display:none !important}
+        a[href^="https://maps.google.com/maps"]{display:none !important}
+
+        .gmnoprint a, .gmnoprint span, .gm-style-cc {
+            display:none;
+        }
+        .gmnoprint div {
+            background:none !important;
+        }
+
+        .map {
+            position: absolute;
+            width: 100%;
+            height: 425px;
+                
+            @media screen and (max-width: $break-large) {
+                height: 350px;
+            }
+            @media screen and (max-width: $break-medium) {
+                height: 325px;
+            }
+            @media screen and (max-width: $break-small) {
+                height: 300px;
+            }
+        }
+
+        @media screen and (max-width: $break-large) {
+            height: 350px;
+        }
+        @media screen and (max-width: $break-medium) {
+            height: 325px;
+        }
+        @media screen and (max-width: $break-small) {
+            height: 300px;
+        }
+    }
+
+    .post {
+        @include margin(25px,auto,25px,auto);
+
+        h3 {
+            @include margin(10px,auto,10px,auto);
+        }
+
+        h1, h2,h3, h4, h5, p {
+            @media screen and (max-width: $break-small) {
+                text-align: left;
+            }
+        }
+
+        img {
+            @include margin(0,auto,0,auto);
+        }
+
+        .caption {
+            @include font-size(10);
+            font-style: oblique;
+        }
+    }
+
+    .posts{
+        .post-item {
+            @include margin(0,auto,25px,auto);
+            @include padding(0,0,0,0);
+            border-bottom: 1px solid $lightGrayColor;
+
+            h3 {
+                @include margin(0,auto,10px,auto);
+
+                @media screen and (max-width: $break-small) {
+                    margin-top: 8px;
+                    text-align: left;
+                }
+            }
+
+            p {
+                @media screen and (max-width: $break-small) {
+                    text-align: left;
+                }
+            }
+
+            &:nth-last-child(n) {
+                border-bottom: none;
+            }
+        }
+    }
+
+    footer {
+        @include padding(20px,0,20px,0);
+
+        p {
+            @include font-size(7);
+            @include line-height(9);
+
+            @media screen and (min-width: $break-xsmall) and (max-width: $break-small) {
+                text-align: center;
+            }
+
+            @media screen and (min-width: $break-medium) {
+                text-align: left;
+            }
+        }
+
+        .social-icons {
+            text-align: right;
+
+            a {
+                position: relative;
+                display: inline-block;
+                @include font-size(20);
+                @include margin(0,0,0,10px);
+                color: $darkGrayColor;
+                
+                i {
+                    @include font-size(20);
+                    @include line-height(10);
+                    @include margin(5px,5px,5px,5px);
+                    @include padding(0,0,0,0);
+                }
+
+                &::after {
+                    background: $whiteColor;
+                    content: '';
+                    position: absolute;
+                    display: inline-block;
+                    width: $full-width;
+                    height: 52%;
+                    top: 25%;
+                    left: 0;
+                    z-index: -1;
+                    @include box-shadow(unquote('0 4px 8px rgba(6, 147, 206, 0.3), 4px 0 40px rgba(6, 147, 206, 0.1) inset'));
+                    @include transition(0s,0.25s,all,ease-in-out);
+                    @include border-radius(10px,10px,10px,10px);
+                }
+
+                &:hover {
+                    color: $greenColor;
+
+                    &::after {
+                        @include box-shadow(unquote('0 0 20px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1) inset'));
+                        @include border-radius(30%,30%,30%,30%);
+                        transform: scale(1.6);
+                        opacity: 0;
+                    }
+                }
+            }
+            
+            @media screen and (max-width: $break-small) {
+                text-align: center;
+            }
+        }
+    }
+}
+
+/* BOUNCING ARROW */
+.arrow, .scrollBtn {
+    position: absolute;
+    width: $full-width;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    @include margin(2%,0,2%,0);
+    bottom: 0;
+    opacity: 0.6;
+    z-index: 999;
+    @include transition(0s,0.25s,all,ease-in-out);
+
+    .arrowBtn {
+        @include font-size(25);
+        color: $whiteColor;
+        background: rgba(255,255,255,0.6);
+        width: 60px;
+        height: 60px;
+        @include margin(0,auto,0,auto);
+        @include padding(5px,0,0,0);
+        @include border-radius(30px,30px,30px,30px);
+        @include box-shadow(0px 2px 4px $darkGrayColor);
+
+        svg {
+            display: flex;
+            align-items: center;
+            @include margin(-3px,auto,0,auto);
+            
+            path {
+                @include box-shadow(0px 2px 4px $darkGrayColor);
+            }
+        }
+
+        &:hover, &:focus, &:visited {
+            color: $whiteColor;
+            text-decoration: none;
+        }
+    }
+
+    &:hover {
+        opacity: 0.9;
+    }
+
+    @media screen and (max-width: $break-large) {
+        @include margin(2%,0,2%,0);
+    }
+
+    @media screen and (max-width: $break-medium) {
+        @include margin(4%,0,4%,0);
+    }
+
+    @media screen and (max-width: $break-small) {
+        @include margin(8%,0,8%,0);
+    }
+
+    @media screen and (max-width: $break-xsmall) {
+        @include margin(8%,0,8%,0);
+    }
+}
+
+.bounce {
+    -moz-animation: bounce 2s infinite 3s;
+    -webkit-animation: bounce 2s infinite 3s;
+    animation: bounce 2s infinite 3s;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/* SPACERS */
+@for $i from 1 through 10 {
+    .spacer#{$i * 10} {
+        width: $full-width;
+        height: $i * 10 + px;
+        float: none;
+        clear: both;
+    }
+}
+
+@for $i from 1 through 10 {
+    .pad#{$i * 10} {
+        @include padding($i + 10 + px,$i + 10 + px,$i + 10 + px,$i + 10 + px)
+    }
+}
+
+/* Infographic styles for Discover Section */
+@import 'infographic';
+
+/* HIDDEN PARTS */
+@media screen and (min-width: $break-large) {
+    .hidden-lg {
+        display: none !important;
+    }
+}
+@media screen and (min-width: $break-medium) and (max-width: $break-large) {
+    .hidden-md {
+        display: none !important;
+    }
+}
+@media screen and (min-width: $break-small) and (max-width: $break-medium) {
+    .hidden-sm {
+        display: none !important;
+    }
+}
+@media screen and (min-width: $break-xsmall) and (max-width: $break-small) {
+    .hidden-xs {
+        display: none !important;
+    }
+}

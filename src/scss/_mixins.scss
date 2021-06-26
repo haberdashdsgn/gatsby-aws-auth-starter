@@ -1,0 +1,81 @@
+@mixin font-size($sizeValue: 12 ){
+    font-size: $sizeValue + px;
+    font-size: (0.10 * $sizeValue) + rem;
+}
+
+@mixin line-height($heightValue: 12 ){
+    line-height: $heightValue + px;
+    line-height: (0.10 * $heightValue) + rem;
+}
+
+@mixin padding($top, $right, $bottom, $left) {
+    padding-top: $top;
+    padding-right: $right;
+    padding-bottom: $bottom;
+    padding-left: $left;
+}
+
+@mixin margin($top, $right, $bottom, $left) {
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
+}
+
+@mixin border-all($width, $style, $color) {
+    border-width: $width !important;
+    border-style: $style !important;
+    border-color: $color !important;
+}
+
+@mixin border-radius($top-left-radius, $top-right-radius, $bottom-right-radius, $bottom-left-radius) {
+    border-top-left-radius: $top-left-radius;
+    border-top-right-radius: $top-right-radius;
+    border-bottom-right-radius: $bottom-right-radius;
+    border-bottom-left-radius: $bottom-left-radius;
+}
+
+@mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -ms-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+@mixin gradient($direction,$color1,$color2) {
+    background: -webkit-linear-gradient($direction,$color1,$color2);
+    background: -moz-linear-gradient($direction,$color1,$color2);
+    background: -ms-linear-gradient($direction,$color1,$color2);
+    background: -o-linear-gradient($direction,$color1,$color2);
+    background: linear-gradient($direction,$color1,$color2);
+}
+
+@mixin transition($delay,$duration,$property,$timing) {
+    -webkit-transition-property: $property;
+    -webkit-transition-duration: $duration;
+    -webkit-transition-timing-function: $timing;
+    -webkit-transition-delay: $delay;
+    transition-property: $property;
+    transition-duration: $duration;
+    transition-timing-function: $timing;
+    transition-delay: $delay;
+}
+
+@mixin filter($filter) {
+    -webkit-filter: $filter;
+    -moz-filter: $filter;
+    -ms-filter: $filter;
+    -o-filter: $filter;
+    filter: $filter;
+}
+
+@mixin selection-color($color,$selection) {
+    ::-moz-selection {
+        color: $color;
+        background: $selection;
+    }
+    ::selection {
+        color: $color;
+        background: $selection;
+    }
+}

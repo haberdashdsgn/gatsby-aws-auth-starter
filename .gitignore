@@ -1,0 +1,19 @@
+# Project dependencies
+.cache
+node_modules
+yarn-error.log
+package-lock.json
+
+# Build directory
+/public
+.DS_Store
+
+# misc
+z-archive/*
+.vscode/
+*.php
+
+#amplify
+build/
+dist/
+node_modules/
