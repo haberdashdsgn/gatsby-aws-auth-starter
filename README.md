@@ -31,8 +31,9 @@ amplify push        // deploy the configuration to the AWS account
 You can use the following scripts to run the site in development, build for production, or clean directories.
 
 ```
-yarn dev            // initiate the development environment and run local browser
+yarn dev            // initiate the development environment and run locally in the browser
 yarn build          // build the web application into the public folder
+yarn serve          // serve the local website from the ./public directory created by build
 yarn clean          // cleans the cache and public files
 gatsby clean        // deep clean of all cache, public, and various node caches
 ```
