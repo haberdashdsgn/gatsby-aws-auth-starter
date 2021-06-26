@@ -17,10 +17,6 @@
 @import 'mixins';
 @import 'colors';
 
-// Import Slick Carousel base styles and updates
-@import '../../node_modules/slick-carousel/slick/slick.css';
-@import 'slick-theme';
-
 // Hamburgers
 @import url('../../node_modules/hamburgers/dist/hamburgers.css');
 
@@ -31,6 +27,10 @@
     z-index: 99999;
     border: none;
     @include padding(10px,10px,10px,10px);
+
+    &:focus, &:active {
+        box-shadow: none;
+    }
 
     @media screen and (max-width: $break-small) {
         right: 1%;
@@ -455,11 +455,12 @@ body {
     }
 
     #banner {
-        @include padding(0,0,0,0);
+        background: $blueColor;
         height: 75vh;
         min-height: 275px;
         display: flex;
         align-items: center;
+        @include padding(0,0,0,0);
 
         h1 {
             width: 45%;
@@ -495,10 +496,13 @@ body {
         }
 
         &.article {
+            height: 300px;
+
             h1, p {
                 background: none;
                 text-align: left !important;
                 width: 75%;
+                color: $whiteColor;
                 @include margin(0,0,0,0);
                 @include padding(0,0,0,0);
 
@@ -515,7 +519,7 @@ body {
         &.login {
             background: $greenColor;
             background-size: cover;
-            height: 400px;
+            height: 300px;
         }
 
         @media screen and (min-width: $break-xsmall) {
@@ -794,8 +798,8 @@ body {
             border: 1px solid transparent;
 
             &::after {
-                @include box-shadow(unquote('0 0 50px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 0, 0, 0.8) inset'));
-                transform: scale(1.6);
+                background: $linkColor;
+                transform: scale(1.4);
                 opacity: 0;
             }
         }
@@ -824,6 +828,10 @@ body {
             }
         }
 
+        &:after {
+            background: $redColor;
+        }
+
         &:hover {
             color: $lightGrayColor;
             background: $lightRedColor;
@@ -850,6 +858,10 @@ body {
             &:hover {
                 color: $lightGrayColor;
             }
+        }
+
+        &:after {
+            background: $lightGrayColor;
         }
 
         &:hover {
@@ -1039,6 +1051,19 @@ body {
             @include font-size(10);
             font-style: oblique;
         }
+
+        .article-table {
+            table {
+                width: 100%;
+                @include margin(0,auto,20px,auto);
+
+                td {
+                    &:first-of-type {
+                        width: 18%;
+                    }
+                }
+            }
+        }
     }
 
     .posts{
@@ -1046,6 +1071,7 @@ body {
             @include margin(0,auto,25px,auto);
             @include padding(0,0,0,0);
             border-bottom: 1px solid $lightGrayColor;
+            box-sizing: content-box;
 
             h3 {
                 @include margin(0,auto,10px,auto);
@@ -1064,6 +1090,11 @@ body {
 
             &:nth-last-child(n) {
                 border-bottom: none;
+            }
+
+            .post-img,
+            .post-content {
+                @include padding(0,15px,0,15px);
             }
         }
     }
@@ -1229,9 +1260,6 @@ body {
         @include padding($i + 10 + px,$i + 10 + px,$i + 10 + px,$i + 10 + px)
     }
 }
-
-/* Infographic styles for Discover Section */
-@import 'infographic';
 
 /* HIDDEN PARTS */
 @media screen and (min-width: $break-large) {

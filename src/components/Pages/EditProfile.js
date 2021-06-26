@@ -15,7 +15,7 @@ import { confirmAlert } from 'react-confirm-alert'
 
 import 'react-confirm-alert/src/react-confirm-alert.css'
 
-import IndexSeoImage from '../../assets/images/design-table.jpg'
+import IndexSeoImage from '../../assets/images/banner.jpg'
 
 class EditProfile extends React.Component {
     user = getCurrentUser()

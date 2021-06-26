@@ -3,7 +3,7 @@ import ReactGA from 'react-ga'
 import { Container, Row, Col } from 'react-bootstrap'
 import { AppContent } from '../Layout'
 import Banner from '../Layout/banner'
-import { Seo } from '../Nav/seo'
+import { Seo } from '../Nav'
 
 import IndexSeoImage from '../../assets/images/banner.jpg'
 

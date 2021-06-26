@@ -19,7 +19,7 @@ yarn install
 
 ### How do I get set up? ###
 
-Configure, initialize, then deploy your AWS Auth settings. You can log into your AWS account and check Cognito afterwards to make sure you see the new userpool.
+Configure, initialize, then deploy your AWS Auth settings. You can log into your AWS account and check Cognito afterwards to make sure you see the new userpool. NOTE: this example uses **Email** as user sign in
 
 ```
 amplify configure   // follow the protocols to set up a Cognito userpool
@@ -31,10 +31,10 @@ amplify push        // deploy the configuration to the AWS account
 You can use the following scripts to run the site in development, build for production, or clean directories.
 
 ```
-yarn dev     // initiate the development environment and run local browser
-yarn build   // build the web application into the public folder
-yarn clean   // cleans the cache and public files
-gatsby clean // deep clean of all cache, public, and various node caches
+yarn dev            // initiate the development environment and run local browser
+yarn build          // build the web application into the public folder
+yarn clean          // cleans the cache and public files
+gatsby clean        // deep clean of all cache, public, and various node caches
 ```
 
 ### Contact Information ###

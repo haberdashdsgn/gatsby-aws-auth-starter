@@ -8,7 +8,7 @@ import { AuthForm, Email, Password } from '../Forms'
 import Banner from '../Layout/banner'
 import Seo from '../Nav/seo'
 
-import IndexSeoImage from '../../assets/images/design-table.jpg'
+import IndexSeoImage from '../../assets/images/banner.jpg'
 
 class SignIn extends React.Component {
     state = {

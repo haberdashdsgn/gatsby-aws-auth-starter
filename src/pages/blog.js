@@ -81,8 +81,8 @@ class NewsPage extends React.Component {
             render={data => (
                 <>
                 <Layout page='blog' isUserNav={!isLoggedIn() ? false : true}>
-                    <Seo title={`${data.site.siteMetadata.title} | Digital Insights`} description={`Read the latest news, media announcements, and blog topics provided by the creative minds at ${data.site.siteMetadata.title}.`} image={NewsSeoImage} keywords={[``]} />
-                    <Banner title={`Digital Insights`} pageStyle={`news`} />
+                    <Seo title={`Blog`} description={``} image={NewsSeoImage} keywords={[``]} />
+                    <Banner title={`Blog`} pageStyle={`blog`} image={NewsSeoImage} />
                     <section id='content'>
                         <Container>
                             <Row>

@@ -36,9 +36,6 @@ class Nav extends React.Component {
                             <Navbar.Collapse id='navigator'>
                                 <Navigation id='navigation' activeKey={this.page}>
                                     <Navigation.Item>
-                                        <Navigation.Link href='/about/' eventKey='about'>About</Navigation.Link>
-                                    </Navigation.Item>
-                                    <Navigation.Item>
                                         <Navigation.Link href='/blog/' eventKey='blog'>Blog</Navigation.Link>
                                     </Navigation.Item>
                                     <Navigation.Item>
@@ -46,9 +43,6 @@ class Nav extends React.Component {
                                     </Navigation.Item>
                                     <Navigation.Item>
                                         <Navigation.Link href='/signup' eventKey='signup'>Sign Up</Navigation.Link>
-                                    </Navigation.Item>
-                                    <Navigation.Item>
-                                        <Navigation.Link href='/contact/' eventKey='contact'>Contact</Navigation.Link>
                                     </Navigation.Item>
                                 </Navigation>
                             </Navbar.Collapse>     

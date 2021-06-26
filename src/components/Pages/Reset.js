@@ -7,7 +7,7 @@ import { AuthForm, Email, Password, ConfirmationCode } from '../Forms'
 import Banner from '../Layout/banner'
 import Seo from '../Nav/seo'
 
-import IndexSeoImage from '../../assets/images/design-table.jpg'
+import IndexSeoImage from '../../assets/images/banner.jpg'
 
 const initialState = {
     email: ``,

@@ -72,9 +72,6 @@ class UserNav extends React.Component {
                             <Navbar.Collapse id='navigator'>
                                 <Nav id='navigation' activeKey={this.page}>
                                     <Nav.Item>
-                                        <Nav.Link href='/about/' eventKey='about'>About</Nav.Link>
-                                    </Nav.Item>
-                                    <Nav.Item>
                                         <Nav.Link href='/blog/' eventKey='blog'>Blog</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item>
@@ -82,9 +79,6 @@ class UserNav extends React.Component {
                                     </Nav.Item>
                                     <Nav.Item>
                                         <Nav.Link href='/' eventKey='logout' onClick={e => logOut(e)}>Logout</Nav.Link>
-                                    </Nav.Item>
-                                    <Nav.Item>
-                                        <Nav.Link href='/contact/' eventKey='contact'>Contact</Nav.Link>
                                     </Nav.Item>
                                 </Nav>
                             </Navbar.Collapse>

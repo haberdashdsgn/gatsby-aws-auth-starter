@@ -5,7 +5,7 @@ import { AppContent } from '../Layout'
 import Banner from '../Layout/banner'
 import Seo from '../Nav/seo'
 
-import IndexSeoImage from '../../assets/images/design-table.jpg'
+import IndexSeoImage from '../../assets/images/banner.jpg'
 
 const Profile = () => {
     const user = getCurrentUser()

@@ -1,5 +1,5 @@
 import UserNav from './UserNav'
 import Nav from './Nav'
-import SEO from './seo'
+import Seo from './seo'
 
-export { UserNav, Nav, SEO }
+export { UserNav, Nav, Seo }

@@ -3,7 +3,7 @@ var proxy = require('http-proxy-middleware')
 module.exports = {
     siteMetadata: {
         siteUrl: `https://examplesite.com/`,
-        title: `Example Gatsby AWS Auth Site Starter`,
+        title: `Gatsby AWS Auth Site Starter`,
         description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla enim nisi, tempor id malesuada vitae, tempor id erat. Praesent feugiat magna ut est fringilla, sollicitudin iaculis dolor mollis.`,
         author: `Anthony Rizzo`,
         emailUrl: `rizzo@haberdashdesign.com`,
@@ -81,8 +81,8 @@ module.exports = {
             resolve: `gatsby-plugin-manifest`,
             options: {
                 display: `standalone`,
-                name: `Example Gatsby AWS Auth Site Starter`,
-                short_name: `Gatsby AWS Starter`,
+                name: `Gatsby AWS Auth Site Starter`,
+                short_name: `Gatsby AWS Auth Starter`,
                 start_url: `/`,
                 background_color: `#e9f5a9`,
                 theme_color: `#a3b63a`,        
