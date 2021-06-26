@@ -26,7 +26,7 @@ export function ContactForm({ children, title, subtitle, error }) {
     return (
         <Container>
             <Row>
-                <form id='contact' name='contact' className='card-body' action='https://formspree.io/f/meqvqgpd' method='POST'>
+                <form id='contact' name='contact' className='card-body' method='POST'>
                     <h2>{title}</h2>
                     <p>{subtitle}</p>
                     {error && (
