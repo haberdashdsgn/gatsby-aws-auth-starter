@@ -1,5 +1,5 @@
 # Gatsby AWS Auth Site Starter with Blog
-Version 1.0.0
+Version 1.0.1
 
 Documentation for Gatsby AWS Auth Site Starter and the core packages utilized in the build of the project. This website example is built with GatsbyJS and ReactJS frameworks using Netlify for hosting and Amplify for authentication.
 
@@ -19,7 +19,9 @@ yarn install
 
 ### How do I get set up? ###
 
-Configure, initialize, then deploy your AWS Auth settings. You can log into your AWS account and check Cognito afterwards to make sure you see the new userpool. NOTE: this example uses **Email** as user sign in
+Configure, initialize, then deploy your AWS Auth settings. You can log into your AWS account and check Cognito afterwards to make sure you see the new userpool.
+
+NOTE: this example uses **Email** as user signin method. You can customize the template as you wish, but make sure to update the appropriate component Page.
 
 ```
 amplify configure   // follow the protocols to set up a Cognito userpool

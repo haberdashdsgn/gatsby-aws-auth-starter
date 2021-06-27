@@ -57,7 +57,7 @@ class SignIn extends React.Component {
     render() {
         return (
             <div className='wrapper'>
-                <Seo title={`Sign In | Haberdäsh Design`} description={`Haberdäsh Design is a full branding and web development services dedicated to tailoring the user experience your website deserves.`} image={IndexSeoImage} />
+                <Seo title={`Sign In`} description={``} image={IndexSeoImage} />
                 <Banner title={`Sign In`} pageStyle={`login`} />
                 <Container id='content'>
                     <Row>

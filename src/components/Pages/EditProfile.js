@@ -156,7 +156,7 @@ class EditProfile extends React.Component {
     render() {
         return (
             <div className='wrapper'>
-                <Seo title={`Edit Profile | Haberdäsh Design`} description={`Haberdäsh Design is a full branding and web development services dedicated to tailoring the user experience your website deserves.`} image={IndexSeoImage} />
+                <Seo title={`Edit Profile`} description={``} image={IndexSeoImage} />
                 <Banner title={`Edit Profile`} pageStyle={`login`} />
                 <AppContent>
                     <Container id='content'>

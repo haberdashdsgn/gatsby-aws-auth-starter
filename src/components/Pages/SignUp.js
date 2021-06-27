@@ -108,7 +108,7 @@ class SignUp extends React.Component {
         if (this.state.stage === 0) {
             return (
                 <div className='wrapper'>
-                    <Seo title={`Sign Up | Haberdäsh Design`} description={`Haberdäsh Design is a full branding and web development services dedicated to tailoring the user experience your website deserves.`} image={IndexSeoImage} />
+                    <Seo title={`Sign Up`} description={``} image={IndexSeoImage} />
                     <Banner title={`Sign Up`} pageStyle={`login`} />
                     <Container id='content'>
                         <Row>

@@ -1,7 +1,7 @@
 {
   "name": "gatsby-aws-auth-starter",
   "description": "Gatsby AWS Auth Site Starter with Blog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Anthony Rizzo <rizzo@haberdashdesign.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",

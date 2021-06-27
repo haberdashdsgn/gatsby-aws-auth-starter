@@ -11,7 +11,7 @@ const Profile = () => {
     const user = getCurrentUser()
     return (
         <div className='wrapper'>
-            <Seo title={`My Account | Haberdäsh Design`} description={`Haberdäsh Design is a full branding and web development services dedicated to tailoring the user experience your website deserves.`} image={IndexSeoImage} />
+            <Seo title={`My Account`} description={``} image={IndexSeoImage} />
             <Banner title={`My Account`} pageStyle={`login`} />
             <AppContent>
                 <Container id='content'>

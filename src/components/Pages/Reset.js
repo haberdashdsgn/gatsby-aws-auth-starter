@@ -62,7 +62,7 @@ class Reset extends React.Component {
         if (this.state.stage === 0) {
             return (
                 <div className='wrapper'>
-                    <Seo title={`Reset Password | Haberdäsh Design`} description={`Haberdäsh Design is a full branding and web development services dedicated to tailoring the user experience your website deserves.`} image={IndexSeoImage} />
+                    <Seo title={`Reset Password`} description={``} image={IndexSeoImage} />
                     <Banner title={`Password Reset`} pageStyle={`login`} />
                     <Container id='content'>
                         <Row>
